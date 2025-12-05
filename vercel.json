@@ -2,8 +2,14 @@
   "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": "frontend/build",
-  "framework": null,
+  "functions": {
+    "api/**.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "NODE_VERSION": "18"
+  },
   "routes": [
     {
       "src": "/static/(.*)",
