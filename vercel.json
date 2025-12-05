@@ -1,33 +1,10 @@
 {
-  "version": 2,
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "version": 3,
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
   "installCommand": "npm install --legacy-peer-deps",
-  "functions": {
-    "api/**.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "env": {
-    "NODE_VERSION": "18"
-  },
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+    "NODE_ENV": "production"
+  }
 }
